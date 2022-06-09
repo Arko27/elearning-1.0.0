@@ -21,7 +21,7 @@ function addTopics(topicName)
     return box
 }
 
-var Elements = ["C", "C++", "Java", "Python", "R", "Perl", "C#", "PHP"];
+var Elements = ["C", "C++", "Java", "Python", "R", "Perl", "C#", "PHP","projectile"];
 
 		function AddNewElementUsingString()
         {
