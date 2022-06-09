@@ -603,6 +603,20 @@ progress {
     content: "\2014\00A0"
 }
 
+.img-fluid-cat {
+    max-width: 100%;
+    min-height: 100px;
+    object-fit: fill;
+    max-height: 300px;
+    height: 220px;
+
+    /*height: auto;*/
+
+    width: 100%;
+    margin: auto;
+    display: block;
+}
+
 .img-fluid {
     max-width: 100%;
     height: auto

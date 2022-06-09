@@ -26,7 +26,7 @@ function addTopics(topicName)
 function AddNewElementUsingString()
 {
     var NodesString = "";
-    fetch(api.get.apiPhy,{
+    fetch(api.get.apiMath,{
         method: "GET"
     })
 
