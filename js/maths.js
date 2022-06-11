@@ -26,6 +26,8 @@ function addTopics(topicName)
 function AddNewElementUsingString()
 {
     var NodesString = "";
+    var i = 0;
+
     fetch(api.get.apiMath,{
         method: "GET"
     })
@@ -34,8 +36,9 @@ function AddNewElementUsingString()
     .then((data) => {
         // console.log(data.result)
         data.result.forEach(elem => {
+            i++;
             console.log(elem.name);
-            NodesString += addTopics(elem.name);
+            NodesString += addTopics(String(i) + '. ' + elem.name);
     });
     var UlElement = document.getElementById('topic-box');
     UlElement.insertAdjacentHTML('beforeend', NodesString);
