@@ -1,9 +1,10 @@
-const base = "https://edu-foundation-396dk0l27-kudos-dot-com.vercel.app/api"
+const base = "https://edu-foundation-jz75uhzye-kudos-dot-com.vercel.app/api";
 const api = {
     //GET
     "get":
     {   
-        "topic"     : `${base}/topic/` 
+        "topic"     : `${base}/topic/` ,
+        "question" : `${base}/question/gettopic/`
     },
 };
 
