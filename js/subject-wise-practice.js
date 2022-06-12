@@ -28,9 +28,16 @@ function AddNewElementUsingString()
 {
     var NodesString = "";
     var i = 0;
-
-    fetch(api.get.apiPhy,{
-        method: "GET"
+    const params = new URLSearchParams(document.location.search);
+    console.log(params)
+    const Subject = params.get("subject");
+    fetch(`${api.get.topic}${Subject}`,{
+        method: "GET",
+        headers: {
+            Accept: 'application/json',
+            'Accept-encoding': 'gzip, deflate',
+            'Content-Type': 'application/json',
+        },
     })
 
     .then((res) => res.json())
@@ -56,32 +63,3 @@ document.getElementById('easy').addEventListener("click",()=>{
 })
 
 
-// var Elements = ["C", "C++", "Java", "Python", "R", "Perl", "C#"];
-
-// 		function AddNewElementUsingString()
-//         {
-// 			var NodesString = "";
-// 			for (var i = 0; i < Elements.length; i++)
-//             {
-// 				NodesString += addTopics(Elements[i]);
-// 			}
-
-// 			var UlElement = document.getElementById('topic-box');
-//             UlElement.insertAdjacentHTML('beforeend', NodesString);
-// 		}
-
-
-// function AddNewElementUsingString()
-// {
-//     fetch(api.get.apiPhy,{
-//         method: "GET"
-//     })
-
-//     .then((res) => res.json())
-//     .then((data) => {
-//         // console.log(data.result)
-//         data.result.forEach(elem => {
-//             console.log(elem.name);
-//     });
-//     });
-// }
