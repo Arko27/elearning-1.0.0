@@ -36,8 +36,8 @@ function addTopics(topicName, subject, topic) {
                             <img class="img-fluid" src="img/course-1.jpg"alt="">
                                 <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
                                     <a href="questions.html?subject=${subject}&topic=${topic}&level=1" id="easy" class="flex-shrink-0 btn btn-sm btn-primary border-end px-3" style="border-radius: 30px 0 0 30px">Easy</a>
-                                    <a href="questions.html" id="mod" class="flex-shrink-0 btn btn-sm btn-primary border-end" style="border-radius: 0px 0 0 0px">Moderate</a>
-                                    <a href="questions.html" id="adv" class="flex-shrink-0 btn btn-sm btn-primary" style="border-radius: 0 30px 30px 0;">Advanced</a>
+                                    <a href="questions.html?subject=${subject}&topic=${topic}&level=2" id="mod" class="flex-shrink-0 btn btn-sm btn-primary border-end" style="border-radius: 0px 0 0 0px">Moderate</a>
+                                    <a href="questions.html?subject=${subject}&topic=${topic}&level=3" id="adv" class="flex-shrink-0 btn btn-sm btn-primary" style="border-radius: 0 30px 30px 0;">Advanced</a>
                                 </div>
                         </div>
                         <div class="text-center p-4 pb-0">
@@ -84,10 +84,3 @@ function AddNewElementUsingString() {
 }
 
 AddNewElementUsingString();
-
-document.getElementById("easy").addEventListener("click", () => {
-  function top() {
-    a = document.getElementById("topic").innerText;
-    return a;
-  }
-});

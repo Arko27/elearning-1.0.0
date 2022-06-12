@@ -9,13 +9,13 @@ if(questions.length==0)
     document.getElementById("start").disabled = true  
     document.getElementById("start").style.cursor = "not-allowed";
     document.getElementById("start").textContent = "Preparing Your Test...";  
-
 }
-else{
+
+else
+{
     document.getElementById("start").disabled = false  
     document.getElementById("start").style.cursor = "pointer"  
     document.getElementById("start").textContent = "Start Test";  
-
 }
 
 const get = (()=>{
@@ -48,20 +48,13 @@ console.log(`{api.get.question}${Subject}/${topic}/${level}?page=1&limit=10`);
     });
 })()
 
-
-
-
-
-
-
-
-
 document.getElementById("start").addEventListener("click",(e)=>{
   e.preventDefault();
     InitializeQuestion()
     setQuestion(0)    
     
 });
+
 document.getElementById("prev-question").addEventListener("click",(e)=>{
     e.preventDefault();
    
@@ -71,7 +64,6 @@ document.getElementById("prev-question").addEventListener("click",(e)=>{
     setQuestion(idx)
     }
     console.log(idx)
-    
 });
 
 document.getElementById("next-question").addEventListener("click",(e)=>{
@@ -94,16 +86,11 @@ function setQuestion()
         document.getElementById("option2").textContent =  questions[idx].option2;
         document.getElementById("option3").textContent =  questions[idx].option3;
         document.getElementById("option4").textContent =  questions[idx].option4;
-
-        
     }
 }
+
 function InitializeQuestion()
 {
     document.getElementById("greet").style.display = "none"
     document.getElementById("question-box").style.display = "block"
-   
-    
 }
-
-
