@@ -57,7 +57,11 @@ const get = (() => {
       questions = data.result;
       document.getElementById("start").disabled = false;
       document.getElementById("start").style.cursor = "pointer";
-      document.getElementById("start").textContent = "Start Test";
+      if(data.result.length > 0){
+        document.getElementById("start").textContent = "Start Test";
+      }else{
+        document.getElementById("start").textContent = "No Test Found!";
+      }
     });
 })();
 
