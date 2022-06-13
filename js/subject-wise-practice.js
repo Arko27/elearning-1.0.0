@@ -2,6 +2,14 @@ import api from "./apis.js";
 import "./main.js";
 
 let topics = [];
+
+window.addEventListener('load', (event) => {
+  const params = new URLSearchParams(document.location.search);
+  const Subject = params.get("subject");
+  
+  document.getElementById("sub").textContent = Subject.charAt(0).toUpperCase() + Subject.substring(1).toLowerCase();
+});
+
 document.getElementById("search-bar").addEventListener("change", (e) => {
   e.preventDefault();
   if (e.target.value != "") {
@@ -50,6 +58,8 @@ function addTopics(topicName, subject, topic) {
 
   return box;
 }
+
+
 
 function AddNewElementUsingString() {
   var NodesString = "";

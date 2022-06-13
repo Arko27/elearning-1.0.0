@@ -4,6 +4,20 @@ import './main.js';
 document.getElementById("question-box").style.display = "none"
 var questions = []
 var idx=0
+
+window.addEventListener('load', (event) => {
+    const params = new URLSearchParams(document.location.search);
+    const Subject = params.get("subject");
+    
+    const link = 'subject-wise-practice.html?subject='+Subject;
+    document.getElementById("sub").setAttribute('href', link);
+
+    const level = {1 : 'Easy', 2 : "Moderate", 3 : "Advanced"};
+    document.getElementById('diff').textContent = level[params.get("level")];
+
+    document.getElementById("sub").textContent = Subject.charAt(0).toUpperCase() + Subject.substring(1).toLowerCase();
+  });
+
 if(questions.length==0)
 {
     document.getElementById("start").disabled = true  
