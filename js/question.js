@@ -15,6 +15,8 @@ window.addEventListener('load', (event) => {
     const level = {1 : 'Easy', 2 : "Moderate", 3 : "Advanced"};
     document.getElementById('diff').textContent = level[params.get("level")];
 
+    document.getElementById('topic').textContent = params.get("topic").replace('%20', ' ');
+
     document.getElementById("sub").textContent = Subject.charAt(0).toUpperCase() + Subject.substring(1).toLowerCase();
   });
 
