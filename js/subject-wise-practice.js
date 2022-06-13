@@ -52,7 +52,8 @@ function addTopics(topicName, subject, topic) {
                             <h3 class="mb-0" id="topic">${topicName}</h3>
                             <div class="mb-3"></div>
                         </div>
-                        <div class="d-flex border-top"></div>
+                        <div class="d-flex border-top">
+                        </div>
                     </div>
                 </div>`;
 
