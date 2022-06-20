@@ -33,42 +33,44 @@ if (questions.length == 0) {
   document.getElementById("start").textContent = "Start Test";
 }
 
-const get = (() => {
-  var NodesString = "";
-  var i = 0;
-  const params = new URLSearchParams(document.location.search);
-  console.log(params);
-  const Subject = params.get("subject");
-  const topic = params.get("topic");
-  const level = params.get("level");
+  function getQues(ques){
+    
+    var NodesString = "";
+    var i = 0;
+    const params = new URLSearchParams(document.location.search);
+    console.log(params);
+    const Subject = params.get("subject");
+    const topic = params.get("topic");
+    const level = params.get("level");
 
-  console.log(`{api.get.question}${Subject}/${topic}/${level}?page=1&limit=10`);
-  fetch(`${api.get.question}${Subject}/${topic}/${level}?page=1&limit=10`, {
-    method: "GET",
-    headers: {
-      Accept: "application/json",
-      "Accept-encoding": "gzip, deflate",
-      "Content-Type": "application/json",
-    },
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data.result);
-      questions = data.result;
-      document.getElementById("start").disabled = false;
-      document.getElementById("start").style.cursor = "pointer";
-      if(data.result.length > 0){
-        document.getElementById("start").textContent = "Start Test";
-      }else{
-        document.getElementById("start").textContent = "No Test Found!";
-      }
-    });
-})();
+    console.log(`{api.get.question}${Subject}/${topic}/${level}?page=1&limit=${ques}`);
+    fetch(`${api.get.question}${Subject}/${topic}/${level}?page=1&limit=${ques}`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Accept-encoding": "gzip, deflate",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.result);
+        questions = data.result;
+        document.getElementById("start").disabled = false;
+        document.getElementById("start").style.cursor = "pointer";
+        if(data.result.length > 0){
+          document.getElementById("start").textContent = "Start Test";
+        }else{
+          document.getElementById("start").textContent = "No Test Found!";
+        }
+      });
+}
 
 document.getElementById("start").addEventListener("click", (e) => {
   e.preventDefault();
   InitializeQuestion();
   setQuestion(0);
+  timer(parseInt(t));
 });
 
 document.getElementById("prev-question").addEventListener("click", (e) => {
@@ -143,6 +145,7 @@ function selectCorrect(e)
         document.getElementById("example4").style.transition = "0.5s";
     }
 }
+
 function setQuestion() {
   if (questions.length > 0) {
     document.getElementById("title").textContent = `Question ${idx + 1}`;
@@ -163,4 +166,59 @@ function setQuestion() {
 function InitializeQuestion() {
   document.getElementById("greet").style.display = "none";
   document.getElementById("question-box").style.display = "block";
+}
+
+function timer(min)
+{
+  var y = new Date();
+  var countDownDate = new Date(y).setMinutes(y.getMinutes() + min)
+
+  var x = setInterval(function()
+  {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    if(minutes < 10)
+      minutes = "0" + minutes
+    
+    if(seconds < 10)
+      seconds = "0" + seconds
+      
+    document.getElementById("demo").textContent = minutes + "m " + seconds + "s ";
+
+    if (distance < 0)
+    {
+      clearInterval(x);
+      document.getElementById("demo").textContent = "TIME IS UP";
+      finishQues();
+    }
+  }, 1000);
+}
+
+let c = 0, t, q;
+
+document.querySelector("#timer").addEventListener("click", (e)=>{
+  t = e.target.innerText.split(' ')[0]
+  document.getElementById("timebtn").textContent = t + " Mins"
+  console.log(t)
+  c++
+  if(c == 2)
+    getQues(q)
+});
+
+document.querySelector("#noquest").addEventListener("click", (e)=>{
+  q = e.target.innerText.split(' ')[0]
+  document.getElementById("quesbtn").textContent = q + " Ques"
+  console.log(q)
+  c++
+
+  if(c == 2)
+    getQues(q)
+});
+
+function finishQues(){
+  document.getElementById("question-box").style.display = "none";
 }
