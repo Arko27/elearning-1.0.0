@@ -251,6 +251,7 @@
     left: 0;
 }
 
+.dropdown-item {cursor: context-menu;}
 
 /*** Service ***/
 .service-item {
