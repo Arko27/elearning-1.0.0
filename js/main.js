@@ -67,6 +67,18 @@
         return false;
     });
 
+    // for navbar
+
+    const linkcolor=document.querySelectorAll('.nav-link');
+    function colorlink(){
+        linkcolor.forEach(l =>l.classList.remove('active-link'))
+        this.classList.add('active-link')
+    }
+    linkcolor.forEach(l=>l.addEventListener('click',colorlink))
+
+// const live=window.location.pathname;
+// console.log(live)
+
 
     // Header carousel
     $(".header-carousel").owlCarousel({

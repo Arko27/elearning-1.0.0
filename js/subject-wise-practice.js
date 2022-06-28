@@ -10,32 +10,42 @@ window.addEventListener('load', (event) => {
   document.getElementById("sub").textContent = Subject.charAt(0).toUpperCase() + Subject.substring(1).toLowerCase();
 });
 
-document.getElementById("search-bar").addEventListener("change", (e) => {
-  e.preventDefault();
-  if (e.target.value != "") {
+function search(){
+
+document.getElementById("search-bar").addEventListener("input", (e) => {
+  
+  // e.preventDefault();
+
+  if (e.target.value != ""){
+
     const params = new URLSearchParams(document.location.search);
     const Subject = params.get("subject");
-
-    console.log(topics);
+    
     var NodesString = "";
-    console.log(e.target.value);
+
     var data = topics.filter((elem, index) =>
-      elem.name.toLowerCase().includes(e.target.value.toLowerCase())
-    );
-    console.log(data);
+      elem.name.toLowerCase().includes(e.target.value.toLowerCase()));
+      
+      if(data.length != 0){
     data.forEach((elem, i) => {
+
       console.log(elem.name);
-      NodesString += addTopics(
-        String(i + 1) + ". " + elem.name,
-        Subject,
-        elem.name
-      );
+      NodesString += addTopics(String(i + 1) + ". " + elem.name, Subject, elem.name);
     });
+
     var UlElement = document.getElementById("topic-box");
     UlElement.innerHTML = "";
     UlElement.insertAdjacentHTML("beforeend", NodesString);
   }
+  else{
+    console.log("No topic")
+  }
+}
+
+  else
+  AddNewElementUsingString()
 });
+}
 
 function addTopics(topicName, subject, topic) {
   let box = `<div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay="0.1s">
@@ -60,13 +70,11 @@ function addTopics(topicName, subject, topic) {
   return box;
 }
 
-
-
 function AddNewElementUsingString() {
   var NodesString = "";
   var i = 0;
   const params = new URLSearchParams(document.location.search);
-  console.log(params);
+  // console.log(params);
   const Subject = params.get("subject");
   fetch(`${api.get.topic}${Subject}`, {
     method: "GET",
@@ -82,7 +90,7 @@ function AddNewElementUsingString() {
       topics = data.result;
       data.result.forEach((elem) => {
         i++;
-        console.log(elem.name);
+        // console.log(elem.name);
         NodesString += addTopics(
           String(i) + ". " + elem.name,
           Subject,
@@ -92,6 +100,7 @@ function AddNewElementUsingString() {
       var UlElement = document.getElementById("topic-box");
       UlElement.insertAdjacentHTML("beforeend", NodesString);
     });
-}
+  }
 
 AddNewElementUsingString();
+search();
