@@ -304,6 +304,8 @@
     transform: scale(1.1);
 }
 
+/* Timer and Questions */
+.dropdown-item {cursor: context-menu;}
 
 /*** Team ***/
 .team-item img {
