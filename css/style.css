@@ -89,15 +89,36 @@
 .navbar-light .navbar-nav .nav-link {
     margin-right: 30px;
     padding: 25px 0;
-    color: #FFFFFF;
+    color: #aa1818;
     font-size: 15px;
     text-transform: uppercase;
     outline: none;
 }
 
-.navbar-light .navbar-nav .nav-link:hover,
+/* .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
     color: var(--primary);
+} */
+/* .navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary);
+} */
+
+/* active link */
+
+.navbar-light .navbar-nav .nav-link.active-link{
+    color: var(--primary) ;
+}
+.navbar-light .navbar-nav .nav-link::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    display: block;
+    margin: auto; 
+    transition:0.5s;
+}
+.navbar-light .navbar-nav .nav-link:hover:after{
+    width: 100%;
 }
 
 @media (max-width: 991.98px) {
@@ -283,6 +304,8 @@
     transform: scale(1.1);
 }
 
+/* Timer and Questions */
+.dropdown-item {cursor: context-menu;}
 
 /*** Team ***/
 .team-item img {

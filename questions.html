@@ -90,7 +90,7 @@
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Easy Questions</h6>
-                <h1 class="mb-5">Topic Name </h1>
+                <h1 class="mb-5" id="demo"> 00m : 00s </h1>
             </div>
         </div>
     </div>
@@ -140,13 +140,41 @@
     
                   <button class="btn btn-primary py-3 px-5 mt-2" id="next-question" >NEXT<i class="fa fa-arrow-right text-white mx-2 me-2"></i></button>
                 
-             
-                
-               
-            </div> 
+            </div>
     </div>
     <div class="col-lg-6 col-sm-10 container" id="greet">
-    <p class="text-center">rules here</p>
+    <p class="text-center">
+        <div class="d-flex justify-content-center">
+        <div class="dropdown mx-1">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="timebtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Time
+            </button>
+            <div id="timer" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item">1 Minutes</a>
+                <a class="dropdown-item">5 Minutes</a>
+                <a class="dropdown-item">10 Minutes</a>
+                <a class="dropdown-item">15 Minutes</a>
+                <a class="dropdown-item">20 Minutes</a>
+                <a class="dropdown-item">25 Minutes</a>
+                <a class="dropdown-item">30 Minutes</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="quesbtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Questions
+            </button>
+            <div id="noquest" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item">5 Questions</a>
+                <a class="dropdown-item">10 Questions</a>
+                <a class="dropdown-item">15 Questions</a>
+                <a class="dropdown-item">20 Questions</a>
+                <a class="dropdown-item">25 Questions</a>
+                <a class="dropdown-item">30 Questions</a>
+            </div>
+          </div>
+          </div>
+    </p>
     <button class="btn btn-primary py-3 px-5 d-block m-auto " id="start" href="">START TEST<i class="fa fa-arrow-right text-white mx-2 me-2"></i></button>
 
     </div>
