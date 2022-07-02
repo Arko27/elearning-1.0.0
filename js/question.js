@@ -57,10 +57,11 @@ const get = (() => {
       questions = data.result;
       document.getElementById("start").disabled = false;
       document.getElementById("start").style.cursor = "pointer";
-      if(data.result.length > 0){
+      if (data.result.length > 0) {
         document.getElementById("start").textContent = "Start Test";
-      }else{
+      } else {
         document.getElementById("start").textContent = "No Test Found!";
+        document.getElementById("start").disabled = true;
       }
     });
 })();
@@ -109,7 +110,7 @@ document.getElementById("check").addEventListener("change", (e) => {
     document.getElementById(target).style.background = "#87E8C6";
     document.getElementById(target).style.transition = "0.5s";
   } else {
-    selectCorrect(e)
+    selectCorrect(e);
   }
   document.getElementById("exampleRadios1").disabled = true;
   document.getElementById("exampleRadios2").disabled = true;
@@ -117,31 +118,42 @@ document.getElementById("check").addEventListener("change", (e) => {
   document.getElementById("exampleRadios4").disabled = true;
 });
 
-function selectCorrect(e)
-{
-    let target = `example${e.target.id[e.target.id.length - 1]}`;
-    document.getElementById(target).style.background = "#EF9688";
-    document.getElementById(target).style.transition = "0.5s";
-    if(questions[idx].correct_answer.indexOf(document.getElementById("exampleRadios1").value) != -1)
-    {
-        document.getElementById("example1").style.background = "#87E8C6";
-        document.getElementById("example1").style.transition = "0.5s";
-    }
-    if(questions[idx].correct_answer.indexOf(document.getElementById("exampleRadios2").value) != -1)
-    {
-        document.getElementById("example2").style.background = "#87E8C6";
-        document.getElementById("example2").style.transition = "0.5s";
-    }
-    if(questions[idx].correct_answer.indexOf(document.getElementById("exampleRadios3").value) != -1)
-    {
-        document.getElementById("example3").style.background = "#87E8C6";
-        document.getElementById("example3").style.transition = "0.5s";
-    }
-    if(questions[idx].correct_answer.indexOf(document.getElementById("exampleRadios4").value) != -1)
-    {
-        document.getElementById("example4").style.background = "#87E8C6";
-        document.getElementById("example4").style.transition = "0.5s";
-    }
+function selectCorrect(e) {
+  let target = `example${e.target.id[e.target.id.length - 1]}`;
+  document.getElementById(target).style.background = "#EF9688";
+  document.getElementById(target).style.transition = "0.5s";
+  if (
+    questions[idx].correct_answer.indexOf(
+      document.getElementById("exampleRadios1").value
+    ) != -1
+  ) {
+    document.getElementById("example1").style.background = "#87E8C6";
+    document.getElementById("example1").style.transition = "0.5s";
+  }
+  if (
+    questions[idx].correct_answer.indexOf(
+      document.getElementById("exampleRadios2").value
+    ) != -1
+  ) {
+    document.getElementById("example2").style.background = "#87E8C6";
+    document.getElementById("example2").style.transition = "0.5s";
+  }
+  if (
+    questions[idx].correct_answer.indexOf(
+      document.getElementById("exampleRadios3").value
+    ) != -1
+  ) {
+    document.getElementById("example3").style.background = "#87E8C6";
+    document.getElementById("example3").style.transition = "0.5s";
+  }
+  if (
+    questions[idx].correct_answer.indexOf(
+      document.getElementById("exampleRadios4").value
+    ) != -1
+  ) {
+    document.getElementById("example4").style.background = "#87E8C6";
+    document.getElementById("example4").style.transition = "0.5s";
+  }
 }
 function setQuestion() {
   if (questions.length > 0) {
