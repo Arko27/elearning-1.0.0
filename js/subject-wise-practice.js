@@ -15,6 +15,9 @@ function search(){
 document.getElementById("search-bar").addEventListener("input", (e) => {
   
   // e.preventDefault();
+  var input = document.getElementById("search-bar").value.toLowerCase();
+  var search = input.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+  var pattern = new RegExp(`${search}`,"gi");
 
   if (e.target.value != ""){
 
@@ -22,9 +25,12 @@ document.getElementById("search-bar").addEventListener("input", (e) => {
     const Subject = params.get("subject");
     
     var NodesString = "";
-
+    console.log(e.target.value.toLowerCase())
     var data = topics.filter((elem, index) =>
-      elem.name.toLowerCase().includes(e.target.value.toLowerCase()));
+       elem.name.toLowerCase().match(pattern))
+
+      // elem.name.toLowerCase().startsWith(e.target.value.toLowerCase()))
+      // .includes(e.target.value.toLowerCase()));
       
       if(data.length != 0){
     data.forEach((elem, i) => {
