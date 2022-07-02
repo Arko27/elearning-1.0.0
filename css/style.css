@@ -86,6 +86,24 @@
     margin-left: 8px;
 }
 
+#logo{
+    max-width: 100%;
+    max-height: 4.5rem;
+}
+
+/* #name-big{
+    color: #2929a3;
+    margin-left: 5%;
+    margin-top: 5%;
+    font-family: Courier New;
+
+}
+
+#name-small{
+    color: #ffbb33;
+    font-family: Papyrus;
+} */
+
 .navbar-light .navbar-nav .nav-link {
     margin-right: 30px;
     padding: 25px 0;
