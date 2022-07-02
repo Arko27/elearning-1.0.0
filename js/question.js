@@ -3,6 +3,7 @@ import "./main.js";
 
 document.getElementById("question-box").style.display = "none";
 var questions = [];
+var response = [];
 var idx = 0;
 
 window.addEventListener("load", (event) => {
@@ -56,6 +57,7 @@ if (questions.length == 0) {
       .then((data) => {
         console.log(data.result);
         questions = data.result;
+        for(var i=0;i<data.result.length;i++){ response[i]=null; }
         document.getElementById("start").disabled = false;
         document.getElementById("start").style.cursor = "pointer";
         if(data.result.length > 0){
@@ -78,6 +80,7 @@ document.getElementById("prev-question").addEventListener("click", (e) => {
 
   if (idx > 0) {
     idx -= 1;
+    checkResponses(idx);
     setQuestion(idx);
     document.getElementById("exampleRadios1").disabled = false;
     document.getElementById("exampleRadios2").disabled = false;
@@ -92,6 +95,7 @@ document.getElementById("next-question").addEventListener("click", (e) => {
   e.preventDefault();
   if (idx < questions.length - 1) {
     idx += 1;
+    checkResponses(idx);
     setQuestion(idx);
     document.getElementById("exampleRadios1").disabled = false;
     document.getElementById("exampleRadios2").disabled = false;
@@ -107,10 +111,12 @@ document.getElementById("check").addEventListener("change", (e) => {
   console.log(e.target.value);
   if (questions[idx].correct_answer.indexOf(e.target.value) != -1) {
     console.log();
+    response[idx]=1
     let target = `example${e.target.id[e.target.id.length - 1]}`;
     document.getElementById(target).style.background = "#87E8C6";
     document.getElementById(target).style.transition = "0.5s";
   } else {
+    response[idx]=0
     selectCorrect(e);
   }
   document.getElementById("exampleRadios1").disabled = true;
@@ -232,4 +238,20 @@ document.querySelector("#noquest").addEventListener("click", (e)=>{
 
 function finishQues(){
   document.getElementById("question-box").style.display = "none";
+}
+function checkResponses(idx){
+  resetResponses()
+  resetChecked()
+}
+function resetResponses(){
+  document.getElementById('example1').style.background = "none"; 
+  document.getElementById('example2').style.background = "none"; 
+  document.getElementById('example3').style.background = "none"; 
+  document.getElementById('example4').style.background = "none"; 
+}
+function resetChecked(){
+  document.getElementById('exampleRadios1').checked = false; 
+  document.getElementById('exampleRadios2').checked = false; 
+  document.getElementById('exampleRadios3').checked = false; 
+  document.getElementById('exampleRadios4').checked = false; 
 }
