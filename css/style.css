@@ -1,24 +1,51 @@
+/* for fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Splash&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gulzar&display=swap');
+
 /********** Template CSS **********/
 :root {
-    --primary: #06BBCC;
+    --primary: #1b4d89 ;
     --light: #F0FBFC;
     --dark: #181d38;
 }
-
+header{
+    margin-left: 257px;
+}
 .fw-medium {
     font-weight: 600 !important;
 }
-
 .fw-semi-bold {
     font-weight: 700 !important;
 }
-
 .back-to-top {
     position: fixed;
     display: none;
     right: 45px;
     bottom: 45px;
     z-index: 99;
+}
+/* for fonts */
+
+.navbar-nav {
+    font-family: 'Abril Fatface', cursive;
+    font-weight: var(--light);
+}
+
+
+
+.container .text-white{
+    font-family: 'Alegreya', serif;
+    font-weight: 10;
+    position: relative;
+    top: 4px;
+    padding-bottom: 12px;
 }
 
 
@@ -39,15 +66,25 @@
 
 /*** Button ***/
 .btn {
-    font-family: 'Nunito', sans-serif;
+    /* font-family: 'Nunito', sans-serif; */
+    font-family: 'Abril Fatface', cursive;
     font-weight: 600;
     transition: .5s;
 }
-
-.btn.btn-primary,
-.btn.btn-secondary {
-    color: #FFFFFF;
+.btn.btn-navbar
+{
+    color: #11110bd6;
+    background-color: #e4ddf4;
+    border-color: white;
 }
+ .btn.btn-navbar:hover
+{
+    background-color: #e4ddf4;
+    border-color: #101011;
+    border-radius: 5px;
+    transition: .6s;
+}
+
 
 .btn-square {
     width: 38px;
@@ -81,7 +118,7 @@
 }
 
 .course-item{
-    box-shadow: 4px 0px 15px 4px rgba(53, 51, 51, 0.68);
+    box-shadow: 4px 0px 15px 4px rgba(82, 80, 80, 0.68);
 }
 .team-item  {
     box-shadow: 4px 0px 15px 4px rgba(75, 71, 71, 0.68);
@@ -106,18 +143,23 @@
     outline: none;
 }
 
-/* .navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link.active {
-    color: var(--primary);
-} */
-/* .navbar-light .navbar-nav .nav-link.active {
-    color: var(--primary);
-} */
+.navbar .text-primary {
+    font-family: 'Lobster', 'cursive';
+    line-height: 26px;
+    font-weight: 350;
+    color: #183a1d ;
+}
 
-/* active link */
+#home .row .text-primary{
+    color: white ;
+    font-family: 'Lobster', cursive;
+    word-spacing: 10px;
+    font-weight: 100;
+}
+
 
 .navbar-light .navbar-nav .nav-link.active-link{
-    color: var(--primary) ;
+    color: #e99f4c;
 }
 .navbar-light .navbar-nav .nav-link::after{
     content: '';
@@ -149,7 +191,7 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: var(--dark);
+    color: #1b4d89;
     font-weight: 500;
 }
 
@@ -197,6 +239,14 @@
         object-fit: cover;
     }
 }
+
+.text-center .Medical{
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    top: 19px;
+
+}
+
 
 .header-carousel .owl-nav {
     position: absolute;
@@ -285,22 +335,34 @@
 
 
 /*** Service ***/
-.service-item {
-    background: var(--light);
+.service-item  {
     transition: .5s;
+    color:#00B4CC
+}
+.service-item h5{
+ font-family: 'Gulzar', serif;
+}
+.service-item p{
+ font-family: 'Gulzar', serif;
+ 
 }
 
 .service-item:hover {
     margin-top: -10px;
-    background: var(--primary);
+    background-color: rgb(228, 221, 244);
 }
 
 .service-item * {
+
+    color: #004E7C;
+   
     transition: .5s;
 }
 
-.service-item:hover * {
-    color: var(--light) !important;
+#about .row .service-item{
+    position: relative;
+    top: 5px;
+   
 }
 
 
@@ -371,11 +433,11 @@
 }
 
 .testimonial-carousel .owl-item.center .testimonial-text {
-    background: var(--primary) !important;
+    background:rgb(228, 221, 244);
 }
 
 .testimonial-carousel .owl-item.center .testimonial-text * {
-    color: #FFFFFF !important;
+    color: #1b4d89 !important;
 }
 
 .testimonial-carousel .owl-dots {
@@ -396,8 +458,7 @@
 }
 
 .testimonial-carousel .owl-dot.active {
-    background: var(--primary);
-    border-color: var(--primary);
+    background: rgb(228, 221, 244);
 }
 
 

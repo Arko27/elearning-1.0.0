@@ -32,6 +32,11 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
+<style>
+    .active-link{
+        color: #e99f4c;
+    }
+</style>
 
 <body>
     <!-- Spinner Start -->
@@ -54,20 +59,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="#" class="nav-link active-link">Home</a>
+                <a href="#home" class="nav-link active-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#courses" class="nav-link">Courses</a>
                 <a href="#team" class="nav-link">Our Team</a>
                 <a href="#testimonial" class="nav-link">Testimonial</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="" class="btn btn-navbar py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
+    </header>
     </nav>
     <!-- Navbar End -->
 
     <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-5">
+    <div class="container-fluid p-0 mb-5" id="home">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="img/carousel-1.jpg" alt="">
@@ -284,7 +290,7 @@
             <!-- Medical Exams Starts -->
 
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="mb-5">Medical Entrance Exams</h1>
+                    <h1 class="Medical b-5">Medical Entrance Exams</h1>
                 </div>
 
                 <div class="row g-4">
@@ -508,7 +514,9 @@
         </div>
     </div>
     <!-- Team End -->
+    <!-- Team End -->
 
+    
     <!-- Testimonial Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s" id="testimonial">
         <div class="container">
@@ -551,8 +559,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
     <!-- Testimonial End -->
+
 
     <!-- Contact Starts -->
     <div class="container-xxl py-5" id="contact">
