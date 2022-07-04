@@ -23,8 +23,7 @@
         } else {
             $('.sticky-top').css('top', '-100px');
         }
-    });
-    
+    });    
     
     // Dropdown on mouse hover
     const $dropdown = $(".dropdown");

@@ -1,4 +1,16 @@
 /********** Template CSS **********/
+
+/*** Google Fonts ***/
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Splash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gulzar&display=swap');
+
 :root {
     --primary: #06BBCC;
     --light: #F0FBFC;
@@ -40,6 +52,7 @@
 /*** Button ***/
 .btn {
     font-family: 'Nunito', sans-serif;
+    /* font-family: 'Abril Fatface', cursive; */
     font-weight: 600;
     transition: .5s;
 }
@@ -75,8 +88,8 @@
     border-radius: 0px;
 }
 
-
 /*** Navbar ***/
+
 .navbar .dropdown-toggle::after {
     border: none;
     content: "\f107";
@@ -91,19 +104,6 @@
     max-height: 4.5rem;
 }
 
-/* #name-big{
-    color: #2929a3;
-    margin-left: 5%;
-    margin-top: 5%;
-    font-family: Courier New;
-
-}
-
-#name-small{
-    color: #ffbb33;
-    font-family: Papyrus;
-} */
-
 .navbar-light .navbar-nav .nav-link {
     margin-right: 30px;
     padding: 25px 0;
@@ -112,16 +112,6 @@
     text-transform: uppercase;
     outline: none;
 }
-
-/* .navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link.active {
-    color: var(--primary);
-} */
-/* .navbar-light .navbar-nav .nav-link.active {
-    color: var(--primary);
-} */
-
-/* active link */
 
 .navbar-light .navbar-nav .nav-link.active-link{
     color: var(--primary) ;
@@ -295,6 +285,7 @@
 .service-item {
     background: var(--light);
     transition: .5s;
+    cursor: context-menu;
 }
 
 .service-item:hover {
@@ -407,7 +398,6 @@
     border-color: var(--primary);
 }
 
-
 /*** Footer ***/
 .footer .btn.btn-social {
     margin-right: 5px;
@@ -416,15 +406,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--light);
+    color: #fff;
     font-weight: normal;
     border: 1px solid #FFFFFF;
     border-radius: 35px;
     transition: .3s;
 }
 
-.footer .btn.btn-social:hover {
-    color: var(--primary);
+.footer .btn.btn-social:hover{
+        color: var(--light);
+}
+
+#twitter:hover{
+    background-color: #fff;
+    color: #1DA1F2;
+}
+
+#facebook:hover{
+    background-color: #fff;
+    color: #4267B2;
+}
+
+#youtube:hover{
+    background-color: #fff;
+    color: #FF0000;
+}
+
+#linkedin:hover{
+    background-color: #fff;
+    color: #0072b1;
+}
+
+#instagram:hover{
+    background-color: #fff;
+    color: #F56040;
 }
 
 .footer .btn.btn-link {
@@ -475,13 +490,9 @@
 }
 
 
+
 /* Searxh Bar */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-/* body{
-  background: #f2f2f2;
-  font-family: 'Open Sans', sans-serif;
-} */
 
 .search {
   width: 100%;
@@ -517,12 +528,7 @@
   font-size: 20px;
 }
 
-/*Resize the wrap to see the search bar change!*/
 .wrap{
   width: 100%;
   margin-bottom: 50px;
-  /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
 }

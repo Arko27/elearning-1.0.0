@@ -81,7 +81,8 @@ h6,
 .h6 {
     margin-top: 0;
     margin-bottom: .5rem;
-    font-family: "Nunito", sans-serif;
+    /* font-family: "Nunito", sans-serif; */
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
     line-height: 1.2;
     color: #181d38
@@ -3097,13 +3098,13 @@ fieldset:disabled .btn {
 .btn-primary {
     color: #000;
     background-color: #06BBCC;
-    border-color: #06BBCC
+    border-color: #06BBCC;
 }
 
 .btn-primary:hover {
     color: #000;
     background-color: #2bc5d4;
-    border-color: #1fc2d1
+    border-color: #1fc2d1;
 }
 
 .btn-check:focus+.btn-primary,
