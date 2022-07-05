@@ -15,6 +15,8 @@
 :root {
     --primary: #06BBCC;
     --light: #F0FBFC;
+    /* --primary: #6ab04c; */
+    /* --light: #badc58; */
     --dark: #181d38;
 }
 body{
@@ -182,15 +184,16 @@ body{
 .navbar-light .navbar-nav .nav-link {
     margin-right: 30px;
     padding: 25px 0;
-    color: #aa1818;
+    /* color: #aa1818; */
     font-size: 15px;
     text-transform: uppercase;
     outline: none;
 }
 
-.navbar-light .navbar-nav .nav-link.active-link{
+/* .navbar-light .navbar-nav .nav-link.active-link{
     color: var(--primary) ;
-}
+} */
+
 .navbar-light .navbar-nav .nav-link::after{
     content: '';
     width: 0%;
@@ -391,6 +394,8 @@ body{
 
 /* Timer and Questions */
 .dropdown-item {cursor: context-menu;}
+#hint label{cursor: context-menu;
+color: var(--primary);}
 
 /*** Team ***/
 .team-item img {

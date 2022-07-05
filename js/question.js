@@ -186,6 +186,7 @@ function setQuestion() {
 function InitializeQuestion() {
   document.getElementById("greet").style.display = "none";
   document.getElementById("question-box").style.display = "block";
+  document.getElementById('hint').querySelector('div').style.display = "none"
 }
 
 function timer(min)
@@ -259,3 +260,28 @@ function resetChecked(){
   document.getElementById('exampleRadios3').checked = false; 
   document.getElementById('exampleRadios4').checked = false; 
 }
+
+let h = 0
+// document.getElementById('hint').addEventListener('click',()=>{
+//   h++
+//   if(h==1)
+//     document.getElementById('hint').textContent = "This is the Hint"
+//   else{
+//     h=h%2
+//     document.getElementById('hint').textContent = "Hint"
+//   }
+  
+// })
+
+document.getElementById('hint').addEventListener('click',()=>{
+  h++
+  if(h==1){
+    // document.getElementById('hint').querySelector('label').style.display = "none"
+    document.getElementById('hint').querySelector('div').style.display = "block"}
+  else{
+    h=h%2
+    document.getElementById('hint').querySelector('div').style.display = "none";
+    document.getElementById('hint').querySelector('label').style.display = "block"
+  }
+  
+})
