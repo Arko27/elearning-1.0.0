@@ -128,6 +128,9 @@ document.getElementById("check").addEventListener("change", (e) => {
 function selectCorrect(e) {
   let target = `example${e.target.id[e.target.id.length - 1]}`;
   document.getElementById(target).style.background = "#EF9688";
+  // document.getElementById(target).insertAdjacentHTML(
+  //   "beforeend", 
+  //   '<i class="fa fa-times ms-3"></i>');
   document.getElementById(target).style.transition = "0.5s";
   if (
     questions[idx].correct_answer.indexOf(
@@ -267,16 +270,6 @@ function resetChecked(){
 }
 
 let h = 0
-// document.getElementById('hint').addEventListener('click',()=>{
-//   h++
-//   if(h==1)
-//     document.getElementById('hint').textContent = "This is the Hint"
-//   else{
-//     h=h%2
-//     document.getElementById('hint').textContent = "Hint"
-//   }
-  
-// })
 
 document.getElementById('hint').addEventListener('click',()=>{
   h++

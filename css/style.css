@@ -28,6 +28,10 @@ body{
     /* background-color:red; */
    
 }
+/* .fa .fa-times{
+    display:block;
+    margin-left:100px;
+} */
 
 #questionImage{
     object-fit: fill;
