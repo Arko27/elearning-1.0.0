@@ -27,13 +27,13 @@ body{
    
 }
 
-/* #questionImage{
+#questionImage{
     object-fit: fill;
     height:200px;
     min-height:90%;
     width: 100%; 
     height:100%;
-} */
+}
 #radio-signup{
     display:flex;
     width:30px;
