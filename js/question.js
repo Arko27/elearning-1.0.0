@@ -220,14 +220,15 @@ function timer(min)
   }, 1000);
 }
 
-let c = 0, t, q;
+let c1 = 0, c2 = 0, t, q;
 
 document.querySelector("#timer").addEventListener("click", (e)=>{
   t = e.target.innerText.split(' ')[0]
   document.getElementById("timebtn").textContent = t + " Mins"
   console.log(t)
-  c++
-  if(c == 2)
+  c1 = 1
+  
+  if(c1 == 1 && c2 == 1)
     getQues(q)
 });
 
@@ -235,9 +236,9 @@ document.querySelector("#noquest").addEventListener("click", (e)=>{
   q = e.target.innerText.split(' ')[0]
   document.getElementById("quesbtn").textContent = q + " Ques"
   console.log(q)
-  c++
+  c2 = 1
 
-  if(c == 2)
+  if(c1 == 1 && c2 == 1)
     getQues(q)
 });
 
