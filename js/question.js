@@ -167,8 +167,10 @@ function setQuestion() {
   if (questions.length > 0) {
     document.getElementById("title").textContent = `Question ${idx + 1}`;
     document.getElementById("question").textContent = questions[idx].question;
-    document.getElementById("questionImage").src = questions[idx].questionImage;
-    document.getElementById("questionImage").style['object-fit'] = 'contain';
+    if(questions[idx].questionImage!=""){
+      document.getElementById("questionImage").src = questions[idx].questionImage;
+    }
+    // document.getElementById("questionImage").style['object-fit'] = 'contain';
     
     document.getElementById("option1").textContent = questions[idx].option1;
     document.getElementById("option2").textContent = questions[idx].option2;
