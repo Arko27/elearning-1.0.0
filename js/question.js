@@ -170,6 +170,8 @@ function setQuestion() {
     document.getElementById("questionImage").src = questions[idx].questionImage;
     
     if(questions[idx].questionImage!=""){
+      console.log(idx)
+      document.getElementById("questionImage").style.display="block"
     }
     // document.getElementById("questionImage").style['object-fit'] = 'contain';
     
