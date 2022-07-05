@@ -221,7 +221,7 @@ body{
 
     .navbar .dropdown-menu.fade-down {
         top: 100%;
-        transform: rotateX(-75deg);
+        transform: rotateX(0deg);
         transform-origin: 0% 0%;
     }
 
