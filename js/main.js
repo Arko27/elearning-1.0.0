@@ -62,7 +62,7 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({scrollTop: 0}, 700, 'easeInOutExpo');
         return false;
     });
 
@@ -82,7 +82,7 @@
     // Header carousel
     $(".header-carousel").owlCarousel({
         autoplay: true,
-        smartSpeed: 1500,
+        smartSpeed: 700,
         items: 1,
         dots: false,
         loop: true,
@@ -97,7 +97,7 @@
     // Testimonials carousel
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
-        smartSpeed: 1000,
+        smartSpeed: 700,
         center: true,
         margin: 24,
         dots: true,

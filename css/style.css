@@ -204,6 +204,7 @@
 
 .header-carousel .owl-nav .owl-prev,
 .header-carousel .owl-nav .owl-next {
+    visibility: hidden;
     margin: 7px 0;
     width: 45px;
     height: 45px;
