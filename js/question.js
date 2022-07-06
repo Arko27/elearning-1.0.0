@@ -7,6 +7,18 @@ var response = [];
 var idx = 0;
 
 window.addEventListener("load", (event) => {
+  // alert("")
+  const getQuestion = JSON.parse(localStorage.getItem('question'));
+  if(getQuestion && getQuestion.length>0){
+    questions=getQuestion
+    c1=1
+    c2=1
+    InitializeQuestion();
+    setQuestion(0);
+    Reloadtimer(parseInt(localStorage.getItem('minutes')),parseInt(localStorage.getItem('seconds') ))
+     
+  }
+
   const params = new URLSearchParams(document.location.search);
   const Subject = params.get("subject");
 
@@ -57,6 +69,7 @@ if (questions.length == 0) {
       .then((data) => {
         console.log(data.result);
         questions = data.result;
+        localStorage.setItem('question',JSON.stringify(questions));
         for(var i=0;i<data.result.length;i++){ response[i]=null; }
         document.getElementById("start").disabled = false;
         document.getElementById("start").style.cursor = "pointer";
@@ -200,6 +213,41 @@ function InitializeQuestion() {
   document.getElementById('hint').querySelector('div').style.display = "none"
 }
 
+function Reloadtimer(min,sec)
+{
+  console.log(min,typeof(min));
+  var y = new Date();
+  var date = new Date(y) 
+  var countDownDate = date.setMinutes(y.getMinutes() + min)
+  var countDownDate = date.setSeconds(y.getSeconds() + sec)
+
+  var x = setInterval(function()
+  {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    localStorage.setItem('minutes',minutes);
+   
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    localStorage.setItem('seconds',seconds);
+    if(minutes < 10)
+      minutes = "0" + minutes
+    
+    if(seconds < 10)
+      seconds = "0" + seconds
+      
+    document.getElementById("demo").textContent = minutes + "m " + seconds + "s ";
+
+    if (distance < 0)
+    {
+      clearInterval(x);
+      document.getElementById("demo").textContent = "TIME IS UP";
+      finishQues();
+    }
+  }, 1000);
+}
+
 function timer(min)
 {
   var y = new Date();
@@ -211,14 +259,18 @@ function timer(min)
     var distance = countDownDate - now;
 
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    
+    localStorage.setItem('minutes',minutes);
+    
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
+    
+    localStorage.setItem('seconds',seconds);
     if(minutes < 10)
       minutes = "0" + minutes
     
     if(seconds < 10)
       seconds = "0" + seconds
-      
+     
     document.getElementById("demo").textContent = minutes + "m " + seconds + "s ";
 
     if (distance < 0)
@@ -254,6 +306,7 @@ document.querySelector("#noquest").addEventListener("click", (e)=>{
 
 function finishQues(){
   document.getElementById("question-box").style.display = "none";
+  localStorage.clear();
 }
 function checkResponses(idx){
   resetResponses()
@@ -278,7 +331,10 @@ document.getElementById('hint').addEventListener('click',()=>{
   h++
   if(h==1){
     // document.getElementById('hint').querySelector('label').style.display = "none"
-    document.getElementById('hint').querySelector('div').style.display = "block"}
+    document.getElementById('hint').querySelector('div').style.display = "block"
+    document.getElementById('hint').querySelector('div').style.transition = "0.7s"
+    
+  }
   else{
     h=h%2
     document.getElementById('hint').querySelector('div').style.display = "none";

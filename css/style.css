@@ -395,10 +395,19 @@ body{
 .dropdown-item {
     cursor: context-menu;
 }
+#hint{
+    width:auto;
+}
 #hint label{
     cursor: context-menu;
     color: var(--primary);
     margin-bottom: 5px;
+    transition:0.6s;
+    
+}
+#hint div{
+    width: 100%;
+    transition:0.6s;
 }
 
 /*** Team ***/
