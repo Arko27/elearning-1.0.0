@@ -41,6 +41,10 @@ body{
     height:100%;
     display: none;
 }
+#rewardcard{
+    display:none;
+}
+
 #radio-signup{
     display:flex;
     width:30px;
@@ -409,7 +413,10 @@ body{
     width: 100%;
     transition:0.6s;
 }
-
+#rewardImg{
+    width:220px;
+    height:220px;
+}
 /*** Team ***/
 .team-item img {
     transition: .5s;

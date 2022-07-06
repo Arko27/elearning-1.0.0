@@ -221,7 +221,7 @@ function Reloadtimer(min,sec)
   var countDownDate = date.setMinutes(y.getMinutes() + min)
   var countDownDate = date.setSeconds(y.getSeconds() + sec)
 
-  var x = setInterval(function()
+  x = setInterval(function()
   {
     var now = new Date().getTime();
     var distance = countDownDate - now;
@@ -253,7 +253,7 @@ function timer(min)
   var y = new Date();
   var countDownDate = new Date(y).setMinutes(y.getMinutes() + min)
 
-  var x = setInterval(function()
+  x = setInterval(function()
   {
     var now = new Date().getTime();
     var distance = countDownDate - now;
@@ -303,9 +303,15 @@ document.querySelector("#noquest").addEventListener("click", (e)=>{
   if(c1 == 1 && c2 == 1)
     getQues(q)
 });
-
+var x;
+document.getElementById("confirmsubmit").addEventListener("click", (e)=>{
+  finishQues();
+});
 function finishQues(){
   document.getElementById("question-box").style.display = "none";
+  document.getElementById("rewardcard").style.display = "block";
+  clearInterval(x);
+  document.getElementById("demo").textContent = "";
   localStorage.clear();
 }
 function checkResponses(idx){

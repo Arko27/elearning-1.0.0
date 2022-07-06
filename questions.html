@@ -157,8 +157,8 @@
                   <button class="btn btn-primary py-3 px-5 mt-2" id="next-question" >NEXT<i class="fa fa-arrow-right text-white mx-2 me-2"></i></button>
                 
             </div>
-            <button class="btn btn-danger rounded d-block py-3 px-3 m-auto mt-5 font-bold" id="submit-question" ><b>Submit Test</b></button>
-
+            <button class="btn btn-danger rounded d-block py-3 px-3 m-auto mt-5 font-bold" id="submit-question" data-bs-toggle="modal" data-bs-target="#exampleModal"><b>Submit Test</b></button>
+<!-- timer initialization -->
     </div>
     <div class="col-lg-6 col-sm-10 container" id="greet">
     <p class="text-center">
@@ -196,8 +196,43 @@
     <button class="btn btn-primary py-3 px-5 d-block m-auto " id="start" href="">START TEST<i class="fa fa-arrow-right text-white mx-2 me-2"></i></button>
 
     </div>
-   
+
+    <!-- result -->
+   <div class="" id="rewardcard">
+    <div class="w-100 h-25  overflow-hidden text-capitalize text-center d-flex justify-content-center" >
+        <div class="border border-1 border-light w-25 rounded-1 shadow-sm py-1">
+            <h4>you have earned a badge!</h4>
+            <div class="d-flex justify-content-center">
+                <img class="" src="img/badge.gif" id="rewardImg" alt="">
+            </div>
+            <h5>Your Score</h5>
+            <p>16/20</p>
+            <h4>Better Luck Next Time!</h4>
+    
+        </div>   
+       </div>
+   </div>
     </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Submit Test</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            Are you sure you want to submit?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+          <button type="button" class="btn btn-primary" id="confirmsubmit" data-bs-dismiss="modal">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
     <!-- Questions End -->
 
     <!-- Footer Start -->
