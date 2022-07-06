@@ -176,6 +176,9 @@ function setQuestion() {
       console.log(idx)
       document.getElementById("questionImage").style.display="block"
     }
+    else{
+      document.getElementById("questionImage").style.display="none"
+    }
     // document.getElementById("questionImage").style['object-fit'] = 'contain';
     
     document.getElementById("option1").textContent = questions[idx].option1;

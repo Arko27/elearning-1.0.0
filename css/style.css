@@ -392,9 +392,14 @@ body{
 }
 
 /* Timer and Questions */
-.dropdown-item {cursor: context-menu;}
-#hint label{cursor: context-menu;
-color: var(--primary);}
+.dropdown-item {
+    cursor: context-menu;
+}
+#hint label{
+    cursor: context-menu;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
 
 /*** Team ***/
 .team-item img {
@@ -611,4 +616,11 @@ color: var(--primary);}
 .wrap{
   width: 100%;
   margin-bottom: 50px;
+}
+.form-check-input{
+    height:15px;
+    width:15px;
+    min-width:15px ;
+    min-height:15px ;
+
 }
