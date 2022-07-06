@@ -57,7 +57,7 @@ function addTopics(topicName, subject, topic) {
   let box = `<div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay="0.1s">
                     <div class="course-item bg-light">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/course-1.jpg"alt="">
+                            <img class="img-fluid" src="img/${subject}.jpg"alt="">
                                 <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
                                     <a href="questions.html?subject=${subject}&topic=${topic}&level=1" id="easy" class="flex-shrink-0 btn btn-sm btn-primary border-end px-3" style="border-radius: 30px 0 0 30px">Easy</a>
                                     <a href="questions.html?subject=${subject}&topic=${topic}&level=2" id="mod" class="flex-shrink-0 btn btn-sm btn-primary border-end" style="border-radius: 0px 0 0 0px">Moderate</a>
