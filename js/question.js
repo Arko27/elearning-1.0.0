@@ -8,15 +8,17 @@ var idx = 0;
 
 window.addEventListener("load", (event) => {
   // alert("")
-  const getQuestion = JSON.parse(localStorage.getItem('question'));
-  if(getQuestion && getQuestion.length>0){
-    questions=getQuestion
-    c1=1
-    c2=1
+  const getQuestion = JSON.parse(localStorage.getItem("question"));
+  if (getQuestion && getQuestion.length > 0) {
+    questions = getQuestion;
+    c1 = 1;
+    c2 = 1;
     InitializeQuestion();
     setQuestion(0);
-    Reloadtimer(parseInt(localStorage.getItem('minutes')),parseInt(localStorage.getItem('seconds') ))
-     
+    Reloadtimer(
+      parseInt(localStorage.getItem("minutes")),
+      parseInt(localStorage.getItem("seconds"))
+    );
   }
 
   const params = new URLSearchParams(document.location.search);
@@ -46,39 +48,45 @@ if (questions.length == 0) {
   document.getElementById("start").textContent = "Start Test";
 }
 
-  function getQues(ques){
-    
-    var NodesString = "";
-    var i = 0;
-    const params = new URLSearchParams(document.location.search);
-    console.log(params);
-    const Subject = params.get("subject");
-    const topic = params.get("topic");
-    const level = params.get("level");
+function getQues(ques) {
+  var NodesString = "";
+  var i = 0;
+  const params = new URLSearchParams(document.location.search);
+  console.log(params);
+  const Subject = params.get("subject");
+  const topic = params.get("topic");
+  const level = params.get("level");
 
-    console.log(`{api.get.question}${Subject}/${topic}/${level}?page=1&limit=${ques}`);
-    fetch(`${api.get.question}${Subject}/${topic}/${level}?page=1&limit=${ques}`, {
+  console.log(
+    `{api.get.question}${Subject}/${topic}/${level}?page=1&limit=${ques}`
+  );
+  fetch(
+    `${api.get.question}${Subject}/${topic}/${level}?page=1&limit=${ques}`,
+    {
       method: "GET",
       headers: {
         Accept: "application/json",
         "Accept-encoding": "gzip, deflate",
         "Content-Type": "application/json",
       },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.result);
-        questions = data.result;
-        localStorage.setItem('question',JSON.stringify(questions));
-        for(var i=0;i<data.result.length;i++){ response[i]=null; }
-        document.getElementById("start").disabled = false;
-        document.getElementById("start").style.cursor = "pointer";
-        if(data.result.length > 0){
-          document.getElementById("start").textContent = "Start Test";
-        }else{
-          document.getElementById("start").textContent = "No Test Found!";
-        }
-      });
+    }
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data.result);
+      questions = data.result;
+      localStorage.setItem("question", JSON.stringify(questions));
+      for (var i = 0; i < data.result.length; i++) {
+        response[i] = null;
+      }
+      document.getElementById("start").disabled = false;
+      document.getElementById("start").style.cursor = "pointer";
+      if (data.result.length > 0) {
+        document.getElementById("start").textContent = "Start Test";
+      } else {
+        document.getElementById("start").textContent = "No Test Found!";
+      }
+    });
 }
 
 document.getElementById("start").addEventListener("click", (e) => {
@@ -124,12 +132,12 @@ document.getElementById("check").addEventListener("change", (e) => {
   console.log(e.target.value);
   if (questions[idx].correct_answer.indexOf(e.target.value) != -1) {
     console.log();
-    response[idx]=1
+    response[idx] = 1;
     let target = `example${e.target.id[e.target.id.length - 1]}`;
     document.getElementById(target).style.background = "#87E8C6";
     document.getElementById(target).style.transition = "0.5s";
   } else {
-    response[idx]=0
+    response[idx] = 0;
     selectCorrect(e);
   }
   document.getElementById("exampleRadios1").disabled = true;
@@ -142,7 +150,7 @@ function selectCorrect(e) {
   let target = `example${e.target.id[e.target.id.length - 1]}`;
   document.getElementById(target).style.background = "#EF9688";
   // document.getElementById(target).insertAdjacentHTML(
-  //   "beforeend", 
+  //   "beforeend",
   //   '<i class="fa fa-times ms-3"></i>');
   document.getElementById(target).style.transition = "0.5s";
   if (
@@ -184,16 +192,15 @@ function setQuestion() {
     document.getElementById("title").textContent = `Question ${idx + 1}`;
     document.getElementById("question").textContent = questions[idx].question;
     document.getElementById("questionImage").src = questions[idx].questionImage;
-    
-    if(questions[idx].questionImage!=""){
-      console.log(idx)
-      document.getElementById("questionImage").style.display="block"
-    }
-    else{
-      document.getElementById("questionImage").style.display="none"
+
+    if (questions[idx].questionImage != "") {
+      console.log(idx);
+      document.getElementById("questionImage").style.display = "block";
+    } else {
+      document.getElementById("questionImage").style.display = "none";
     }
     // document.getElementById("questionImage").style['object-fit'] = 'contain';
-    
+
     document.getElementById("option1").textContent = questions[idx].option1;
     document.getElementById("option2").textContent = questions[idx].option2;
     document.getElementById("option3").textContent = questions[idx].option3;
@@ -210,37 +217,33 @@ function setQuestion() {
 function InitializeQuestion() {
   document.getElementById("greet").style.display = "none";
   document.getElementById("question-box").style.display = "block";
-  document.getElementById('hint').querySelector('div').style.display = "none"
+  document.getElementById("hint").querySelector("div").style.display = "none";
 }
 
-function Reloadtimer(min,sec)
-{
-  console.log(min,typeof(min));
+function Reloadtimer(min, sec) {
+  console.log(min, typeof min);
   var y = new Date();
-  var date = new Date(y) 
-  var countDownDate = date.setMinutes(y.getMinutes() + min)
-  var countDownDate = date.setSeconds(y.getSeconds() + sec)
+  var date = new Date(y);
+  var countDownDate = date.setMinutes(y.getMinutes() + min);
+  var countDownDate = date.setSeconds(y.getSeconds() + sec);
 
-  x = setInterval(function()
-  {
+  x = setInterval(function () {
     var now = new Date().getTime();
     var distance = countDownDate - now;
 
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    localStorage.setItem('minutes',minutes);
-   
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    localStorage.setItem('seconds',seconds);
-    if(minutes < 10)
-      minutes = "0" + minutes
-    
-    if(seconds < 10)
-      seconds = "0" + seconds
-      
-    document.getElementById("demo").textContent = minutes + "m " + seconds + "s ";
+    localStorage.setItem("minutes", minutes);
 
-    if (distance < 0)
-    {
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    localStorage.setItem("seconds", seconds);
+    if (minutes < 10) minutes = "0" + minutes;
+
+    if (seconds < 10) seconds = "0" + seconds;
+
+    document.getElementById("demo").textContent =
+      minutes + "m " + seconds + "s ";
+
+    if (distance < 0) {
       clearInterval(x);
       document.getElementById("demo").textContent = "TIME IS UP";
       finishQues();
@@ -248,33 +251,29 @@ function Reloadtimer(min,sec)
   }, 1000);
 }
 
-function timer(min)
-{
+function timer(min) {
   var y = new Date();
-  var countDownDate = new Date(y).setMinutes(y.getMinutes() + min)
+  var countDownDate = new Date(y).setMinutes(y.getMinutes() + min);
 
-  x = setInterval(function()
-  {
+  x = setInterval(function () {
     var now = new Date().getTime();
     var distance = countDownDate - now;
 
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    
-    localStorage.setItem('minutes',minutes);
-    
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-    localStorage.setItem('seconds',seconds);
-    if(minutes < 10)
-      minutes = "0" + minutes
-    
-    if(seconds < 10)
-      seconds = "0" + seconds
-     
-    document.getElementById("demo").textContent = minutes + "m " + seconds + "s ";
 
-    if (distance < 0)
-    {
+    localStorage.setItem("minutes", minutes);
+
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    localStorage.setItem("seconds", seconds);
+    if (minutes < 10) minutes = "0" + minutes;
+
+    if (seconds < 10) seconds = "0" + seconds;
+
+    document.getElementById("demo").textContent =
+      minutes + "m " + seconds + "s ";
+
+    if (distance < 0) {
       clearInterval(x);
       document.getElementById("demo").textContent = "TIME IS UP";
       finishQues();
@@ -282,69 +281,70 @@ function timer(min)
   }, 1000);
 }
 
-let c1 = 0, c2 = 0, t, q;
+let c1 = 0,
+  c2 = 0,
+  t,
+  q;
 
-document.querySelector("#timer").addEventListener("click", (e)=>{
-  t = e.target.innerText.split(' ')[0]
-  document.getElementById("timebtn").textContent = t + " Mins"
-  console.log(t)
-  c1 = 1
-  
-  if(c1 == 1 && c2 == 1)
-    getQues(q)
+document.querySelector("#timer").addEventListener("click", (e) => {
+  t = e.target.innerText.split(" ")[0];
+  document.getElementById("timebtn").textContent = t + " Mins";
+  console.log(t);
+  c1 = 1;
+
+  if (c1 == 1 && c2 == 1) getQues(q);
 });
 
-document.querySelector("#noquest").addEventListener("click", (e)=>{
-  q = e.target.innerText.split(' ')[0]
-  document.getElementById("quesbtn").textContent = q + " Ques"
-  console.log(q)
-  c2 = 1
+document.querySelector("#noquest").addEventListener("click", (e) => {
+  q = e.target.innerText.split(" ")[0];
+  document.getElementById("quesbtn").textContent = q + " Ques";
+  console.log(q);
+  c2 = 1;
 
-  if(c1 == 1 && c2 == 1)
-    getQues(q)
+  if (c1 == 1 && c2 == 1) getQues(q);
 });
 var x;
-document.getElementById("confirmsubmit").addEventListener("click", (e)=>{
+document.getElementById("confirmsubmit").addEventListener("click", (e) => {
   finishQues();
 });
-function finishQues(){
+function finishQues() {
   document.getElementById("question-box").style.display = "none";
   document.getElementById("rewardcard").style.display = "block";
   clearInterval(x);
   document.getElementById("demo").textContent = "";
   localStorage.clear();
 }
-function checkResponses(idx){
-  resetResponses()
-  resetChecked()
+function checkResponses(idx) {
+  resetResponses();
+  resetChecked();
 }
-function resetResponses(){
-  document.getElementById('example1').style.background = "none"; 
-  document.getElementById('example2').style.background = "none"; 
-  document.getElementById('example3').style.background = "none"; 
-  document.getElementById('example4').style.background = "none"; 
+function resetResponses() {
+  document.getElementById("example1").style.background = "none";
+  document.getElementById("example2").style.background = "none";
+  document.getElementById("example3").style.background = "none";
+  document.getElementById("example4").style.background = "none";
 }
-function resetChecked(){
-  document.getElementById('exampleRadios1').checked = false; 
-  document.getElementById('exampleRadios2').checked = false; 
-  document.getElementById('exampleRadios3').checked = false; 
-  document.getElementById('exampleRadios4').checked = false; 
+function resetChecked() {
+  document.getElementById("exampleRadios1").checked = false;
+  document.getElementById("exampleRadios2").checked = false;
+  document.getElementById("exampleRadios3").checked = false;
+  document.getElementById("exampleRadios4").checked = false;
 }
 
-let h = 0
+let h = 0;
 
-document.getElementById('hint').addEventListener('click',()=>{
-  h++
-  if(h==1){
+document.getElementById("hint").addEventListener("click", () => {
+  h++;
+  if (h == 1) {
     // document.getElementById('hint').querySelector('label').style.display = "none"
-    document.getElementById('hint').querySelector('div').style.display = "block"
-    document.getElementById('hint').querySelector('div').style.transition = "0.7s"
-    
+    document.getElementById("hint").querySelector("div").style.display =
+      "block";
+    document.getElementById("hint").querySelector("div").style.transition =
+      "0.7s";
+  } else {
+    h = h % 2;
+    document.getElementById("hint").querySelector("div").style.display = "none";
+    document.getElementById("hint").querySelector("label").style.display =
+      "block";
   }
-  else{
-    h=h%2
-    document.getElementById('hint').querySelector('div').style.display = "none";
-    document.getElementById('hint').querySelector('label').style.display = "block"
-  }
-  
-})
+});

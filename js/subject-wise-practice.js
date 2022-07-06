@@ -3,54 +3,52 @@ import "./main.js";
 
 let topics = [];
 
-window.addEventListener('load', (event) => {
+window.addEventListener("load", (event) => {
   const params = new URLSearchParams(document.location.search);
   const Subject = params.get("subject");
-  
-  document.getElementById("sub").textContent = Subject.charAt(0).toUpperCase() + Subject.substring(1).toLowerCase();
+
+  document.getElementById("sub").textContent =
+    Subject.charAt(0).toUpperCase() + Subject.substring(1).toLowerCase();
 });
 
-function search(){
+function search() {
+  document.getElementById("search-bar").addEventListener("input", (e) => {
+    // e.preventDefault();
+    var input = document.getElementById("search-bar").value.toLowerCase();
+    var search = input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    var pattern = new RegExp(`${search}`, "gi");
 
-document.getElementById("search-bar").addEventListener("input", (e) => {
-  
-  // e.preventDefault();
-  var input = document.getElementById("search-bar").value.toLowerCase();
-  var search = input.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
-  var pattern = new RegExp(`${search}`,"gi");
+    if (e.target.value != "") {
+      const params = new URLSearchParams(document.location.search);
+      const Subject = params.get("subject");
 
-  if (e.target.value != ""){
-
-    const params = new URLSearchParams(document.location.search);
-    const Subject = params.get("subject");
-    
-    var NodesString = "";
-    console.log(e.target.value.toLowerCase())
-    var data = topics.filter((elem, index) =>
-       elem.name.toLowerCase().match(pattern))
+      var NodesString = "";
+      console.log(e.target.value.toLowerCase());
+      var data = topics.filter((elem, index) =>
+        elem.name.toLowerCase().match(pattern)
+      );
 
       // elem.name.toLowerCase().startsWith(e.target.value.toLowerCase()))
       // .includes(e.target.value.toLowerCase()));
-      
-      if(data.length != 0){
-    data.forEach((elem, i) => {
 
-      console.log(elem.name);
-      NodesString += addTopics(String(i + 1) + ". " + elem.name, Subject, elem.name);
-    });
+      if (data.length != 0) {
+        data.forEach((elem, i) => {
+          console.log(elem.name);
+          NodesString += addTopics(
+            String(i + 1) + ". " + elem.name,
+            Subject,
+            elem.name
+          );
+        });
 
-    var UlElement = document.getElementById("topic-box");
-    UlElement.innerHTML = "";
-    UlElement.insertAdjacentHTML("beforeend", NodesString);
-  }
-  else{
-    console.log("No topic")
-  }
-}
-
-  else
-  AddNewElementUsingString()
-});
+        var UlElement = document.getElementById("topic-box");
+        UlElement.innerHTML = "";
+        UlElement.insertAdjacentHTML("beforeend", NodesString);
+      } else {
+        console.log("No topic");
+      }
+    } else AddNewElementUsingString();
+  });
 }
 
 function addTopics(topicName, subject, topic) {
@@ -106,7 +104,7 @@ function AddNewElementUsingString() {
       var UlElement = document.getElementById("topic-box");
       UlElement.insertAdjacentHTML("beforeend", NodesString);
     });
-  }
+}
 
 AddNewElementUsingString();
 search();
