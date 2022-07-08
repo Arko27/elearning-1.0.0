@@ -395,8 +395,8 @@ body {
 #hint {
   width: auto;
 }
-#hint label {
-  cursor: context-menu;
+#hint_label {
+  cursor: pointer;
   color: var(--primary);
   margin-bottom: 5px;
   transition: 0.6s;
