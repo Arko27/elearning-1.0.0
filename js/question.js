@@ -84,6 +84,8 @@ function getQues(ques) {
       if (data.result.length > 0) {
         document.getElementById("start").textContent = "Start Test";
       } else {
+        document.getElementById("start").disabled = true;
+
         document.getElementById("start").textContent = "No Test Found!";
       }
     });
