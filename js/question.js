@@ -8,18 +8,18 @@ var idx = 0;
 
 window.addEventListener("load", (event) => {
   // alert("")
-  const getQuestion = JSON.parse(localStorage.getItem("question"));
-  if (getQuestion && getQuestion.length > 0) {
-    questions = getQuestion;
-    c1 = 1;
-    c2 = 1;
-    InitializeQuestion();
-    setQuestion(0);
-    Reloadtimer(
-      parseInt(localStorage.getItem("minutes")),
-      parseInt(localStorage.getItem("seconds"))
-    );
-  }
+  // const getQuestion = JSON.parse(localStorage.getItem("question"));
+  // if (getQuestion && getQuestion.length > 0) {
+  //   questions = getQuestion;
+  //   c1 = 1;
+  //   c2 = 1;
+  //   InitializeQuestion();
+  //   setQuestion(0);
+  //   Reloadtimer(
+  //     parseInt(localStorage.getItem("minutes")),
+  //     parseInt(localStorage.getItem("seconds"))
+  //   );
+  // }
 
   const params = new URLSearchParams(document.location.search);
   const Subject = params.get("subject");
@@ -338,7 +338,6 @@ let h = 0;
 document.getElementById("hint_label").addEventListener("click", () => {
   h++;
   if (h == 1) {
-    // document.getElementById('hint').querySelector('label').style.display = "none"
     document.getElementById("hint").querySelector("div").style.display = "inline-block";
     document.getElementById("hint").querySelector("div").style.transition = "0.7s";
   } else {
