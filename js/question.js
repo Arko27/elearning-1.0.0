@@ -253,6 +253,8 @@ function Reloadtimer(min, sec) {
   }, 1000);
 }
 
+var x;
+
 function timer(min) {
   var y = new Date();
   var countDownDate = new Date(y).setMinutes(y.getMinutes() + min);
@@ -283,10 +285,7 @@ function timer(min) {
   }, 1000);
 }
 
-let c1 = 0,
-  c2 = 0,
-  t,
-  q;
+let c1 = 0, c2 = 0, t, q, h = 0;
 
 document.querySelector("#timer").addEventListener("click", (e) => {
   t = e.target.innerText.split(" ")[0];
@@ -305,10 +304,11 @@ document.querySelector("#noquest").addEventListener("click", (e) => {
 
   if (c1 == 1 && c2 == 1) getQues(q);
 });
-var x;
+
 document.getElementById("confirmsubmit").addEventListener("click", (e) => {
   finishQues();
 });
+
 function finishQues() {
   document.getElementById("question-box").style.display = "none";
   document.getElementById("rewardcard").style.display = "block";
@@ -316,24 +316,25 @@ function finishQues() {
   document.getElementById("demo").textContent = "";
   localStorage.clear();
 }
+
 function checkResponses(idx) {
   resetResponses();
   resetChecked();
 }
+
 function resetResponses() {
   document.getElementById("example1").style.background = "none";
   document.getElementById("example2").style.background = "none";
   document.getElementById("example3").style.background = "none";
   document.getElementById("example4").style.background = "none";
 }
+
 function resetChecked() {
   document.getElementById("exampleRadios1").checked = false;
   document.getElementById("exampleRadios2").checked = false;
   document.getElementById("exampleRadios3").checked = false;
   document.getElementById("exampleRadios4").checked = false;
 }
-
-let h = 0;
 
 document.getElementById("hint_label").addEventListener("click", () => {
   h++;
