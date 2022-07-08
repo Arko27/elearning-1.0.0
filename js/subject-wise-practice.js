@@ -52,7 +52,7 @@ function search() {
 }
 
 function addTopics(topicName, subject, topic) {
-  let box = `<div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay="0.1s">
+  let box = `<div class="col-lg-3 col-md-6" data-wow-delay="0.1s">
                     <div class="course-item bg-light">
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid" src="img/${subject}.jpg"alt="">
