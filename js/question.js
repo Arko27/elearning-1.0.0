@@ -333,18 +333,15 @@ function resetChecked() {
 
 let h = 0;
 
-document.getElementById("hint").addEventListener("click", () => {
+document.getElementById("hint_label").addEventListener("click", () => {
   h++;
   if (h == 1) {
     // document.getElementById('hint').querySelector('label').style.display = "none"
-    document.getElementById("hint").querySelector("div").style.display =
-      "block";
-    document.getElementById("hint").querySelector("div").style.transition =
-      "0.7s";
+    document.getElementById("hint").querySelector("div").style.display = "inline-block";
+    document.getElementById("hint").querySelector("div").style.transition = "0.7s";
   } else {
     h = h % 2;
     document.getElementById("hint").querySelector("div").style.display = "none";
-    document.getElementById("hint").querySelector("label").style.display =
-      "block";
+    document.getElementById("hint").querySelector("label").style.display ="inline-block";
   }
 });
