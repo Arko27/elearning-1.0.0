@@ -5,6 +5,9 @@ document.getElementById("question-box").style.display = "none";
 var questions = [];
 var response = [];
 var idx = 0;
+var score = 0;
+var total_score = 0;
+let t, q, h = 0;
 
 window.addEventListener("load", (event) => {
   // alert("")
@@ -56,6 +59,8 @@ function getQues(ques) {
   const Subject = params.get("subject");
   const topic = params.get("topic");
   const level = params.get("level");
+
+  total_score = parseInt(ques) * 4;
 
   console.log(
     `{api.get.question}${Subject}/${topic}/${level}?page=1&limit=${ques}`
@@ -138,8 +143,10 @@ document.getElementById("check").addEventListener("change", (e) => {
     let target = `example${e.target.id[e.target.id.length - 1]}`;
     document.getElementById(target).style.background = "#87E8C6";
     document.getElementById(target).style.transition = "0.5s";
+    score += 4;
   } else {
     response[idx] = 0;
+    score -= 1
     selectCorrect(e);
   }
   document.getElementById("exampleRadios1").disabled = true;
@@ -285,24 +292,25 @@ function timer(min) {
   }, 1000);
 }
 
-let c1 = 0, c2 = 0, t, q, h = 0;
+t = document.getElementById("timebtn").innerText.split(" ")[0];
+q = document.getElementById("quesbtn").innerText.split(" ")[0];
+if(t != '' && q != '')
+  getQues(q)
 
 document.querySelector("#timer").addEventListener("click", (e) => {
   t = e.target.innerText.split(" ")[0];
   document.getElementById("timebtn").textContent = t + " Mins";
-  console.log(t);
-  c1 = 1;
 
-  if (c1 == 1 && c2 == 1) getQues(q);
+  console.log(t);
+  getQues(q);
 });
 
 document.querySelector("#noquest").addEventListener("click", (e) => {
+
   q = e.target.innerText.split(" ")[0];
   document.getElementById("quesbtn").textContent = q + " Ques";
   console.log(q);
-  c2 = 1;
-
-  if (c1 == 1 && c2 == 1) getQues(q);
+  getQues(q);
 });
 
 document.getElementById("confirmsubmit").addEventListener("click", (e) => {
@@ -314,6 +322,7 @@ function finishQues() {
   document.getElementById("rewardcard").style.display = "block";
   clearInterval(x);
   document.getElementById("demo").textContent = "";
+  document.getElementById('marks').textContent = score + '/'+ total_score;
   localStorage.clear();
 }
 
