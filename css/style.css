@@ -109,8 +109,8 @@ body {
   right: 40px;
   bottom: 85px;
   z-index: 99;
-  height:60px;
-  width:60px;
+  height:55px;
+  width:55px;
   padding: 0;
   display: flex;
   align-items: center;
@@ -118,7 +118,7 @@ body {
   font-weight: normal;
   border-radius: 50%;
   background:#fff;
-  border: 1px solid #fff;
+  border: 1px solid #ccc;
 }
 
 .floating {
@@ -145,7 +145,7 @@ body {
   /* margin-right:4px; */
   align-self: center;
   transition:  0.7s;
-  transform:scale(0.9)
+  transform:scale(0.7)
 }
 
 @keyframes float{
