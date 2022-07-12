@@ -102,6 +102,56 @@ body {
   font-weight: 700 !important;
 }
 
+
+.contact {
+  position: fixed;
+  display: none;
+  right: 40px;
+  bottom: 85px;
+  z-index: 99;
+  height:60px;
+  width:60px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  border-radius: 50%;
+  background:#fff;
+  border: 1px solid #fff;
+}
+
+.floating {
+  position: fixed;
+  display: none;
+  right: 40px;
+  bottom: 180px;
+  z-index: 99;
+  width:70px;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+  font-weight: normal;
+  background:transparent;
+  /* border: 1px solid #fff; */
+  transition:  0.5s;
+  animation:float ease-in-out 0.5s;
+}
+.floating img{
+  margin:4px 0px;
+  display:block;
+  /* margin-right:4px; */
+  align-self: center;
+  transition:  0.7s;
+  transform:scale(0.9)
+}
+
+@keyframes float{
+  0%{opacity:0}
+  100%{opacity:1}
+}
 .back-to-top {
   position: fixed;
   display: none;
