@@ -13,8 +13,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;1,400;1,500;1,700&display=swap");
 
 :root {
-  --primary: #06bbcc;
-  --light: #f0fbfc;
+  /* --primary: #06bbcc; */
+  /* --light: #F0F8FF; */
+
+  /* --primary: #ffd32a;   */
+  --light: #F0F8FF;
+  --primary: #9fc9ee;
+  
   /* --primary: #6ab04c; */
   /* --light: #badc58; */
   --dark: #181d38;
@@ -68,7 +73,8 @@ body {
   border-radius: 15px;
 }
 #login-box div h3 {
-  font-family: "Nunito", sans-serif;
+  /* font-family: "Nunito", sans-serif; */
+  font-family: "Raleway", sans-serif;
   font-size: 2.3em;
   margin: 15px 0px;
 }
@@ -229,6 +235,13 @@ body {
   max-height: 3.5rem;
   height: auto;
   width: auto;
+}
+
+#footer-logo {
+  max-height: 6rem;
+  height: auto;
+  width: auto;
+  padding-bottom: 5%;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -550,7 +563,7 @@ body {
 
 /*** Footer ***/
 .footer .btn.btn-social {
-  margin-right: 5px;
+  margin-right: 12px;
   width: 35px;
   height: 35px;
   display: flex;
@@ -567,9 +580,9 @@ body {
   color: var(--light);
 }
 
-#twitter:hover {
+#whatsapp:hover {
   background-color: #fff;
-  color: #1da1f2;
+  color: #25D366;
 }
 
 #facebook:hover {
