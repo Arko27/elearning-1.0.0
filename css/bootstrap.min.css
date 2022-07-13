@@ -2277,9 +2277,9 @@ progress {
 .form-control:focus {
     color: #52565b;
     background-color: #fff;
-    border-color: #83dde6;
+    border-color: #0596a3;
     outline: 0;
-    box-shadow: 0 0 0 .25rem rgba(6, 187, 204, 0.25)
+    box-shadow: 0 0 0 .25rem #0596a3;
 }
 
 .form-control::-webkit-date-and-time-value {
@@ -2454,9 +2454,9 @@ textarea.form-control-lg {
 }
 
 .form-select:focus {
-    border-color: #83dde6;
+    border-color: #0596a3;
     outline: 0;
-    box-shadow: 0 0 0 .25rem rgba(6, 187, 204, 0.25)
+    box-shadow: 0 0 0 .25rem #0596a3;
 }
 
 .form-select[multiple],
@@ -2527,9 +2527,9 @@ textarea.form-control-lg {
 }
 
 .form-check-input:focus {
-    border-color: #83dde6;
+    border-color: #0596a3;
     outline: 0;
-    box-shadow: 0 0 0 .25rem rgba(6, 187, 204, 0.25)
+    box-shadow: 0 0 0 .25rem #0596a3;
 }
 
 .form-check-input:checked {
@@ -3087,7 +3087,7 @@ textarea.form-control.is-invalid {
 .btn-check:focus+.btn,
 .btn:focus {
     outline: 0;
-    box-shadow: 0 0 0 .25rem rgba(6, 187, 204, 0.25)
+    box-shadow: 0 0 0 .25rem #0596a3;
 }
 
 .btn:disabled,
@@ -3112,9 +3112,9 @@ fieldset:disabled .btn {
 .btn-check:focus+.btn-primary,
 .btn-primary:focus {
     color: #000;
-    background-color: #2bc5d4;
-    border-color: #1fc2d1;
-    box-shadow: 0 0 0 .25rem rgba(5, 159, 173, 0.5)
+    background-color: #0596a3;
+    border-color: #0596a3;
+    box-shadow: 0 0 0 .25rem #0596a3;
 }
 
 .btn-check:checked+.btn-primary,
@@ -3123,8 +3123,8 @@ fieldset:disabled .btn {
 .btn-primary.active,
 .show>.btn-primary.dropdown-toggle {
     color: #000;
-    background-color: #38c9d6;
-    border-color: #1fc2d1
+    background-color: #0596a3;
+    border-color: #0596a3;
 }
 
 .btn-check:checked+.btn-primary:focus,
@@ -3132,7 +3132,7 @@ fieldset:disabled .btn {
 .btn-primary:active:focus,
 .btn-primary.active:focus,
 .show>.btn-primary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 .25rem rgba(5, 159, 173, 0.5)
+    box-shadow: 0 0 0 .25rem #0596a3;
 }
 
 .btn-primary:disabled,
@@ -3470,7 +3470,7 @@ fieldset:disabled .btn {
 
 .btn-check:focus+.btn-outline-primary,
 .btn-outline-primary:focus {
-    box-shadow: 0 0 0 .25rem rgba(6, 187, 204, 0.5)
+    box-shadow: 0 0 0 .25rem #0596a3
 }
 
 .btn-check:checked+.btn-outline-primary,
@@ -3488,7 +3488,7 @@ fieldset:disabled .btn {
 .btn-outline-primary:active:focus,
 .btn-outline-primary.active:focus,
 .btn-outline-primary.dropdown-toggle.show:focus {
-    box-shadow: 0 0 0 .25rem rgba(6, 187, 204, 0.5)
+    box-shadow: 0 0 0 .25rem #0596a3
 }
 
 .btn-outline-primary:disabled,

@@ -556,7 +556,7 @@ body {
 
 /*** Footer ***/
 .footer .btn.btn-social {
-  margin-right: 12px;
+  margin-right: 9px;
   width: 35px;
   height: 35px;
   display: flex;
@@ -596,6 +596,11 @@ body {
 #instagram:hover {
   background-color: #fff;
   color: #f56040;
+}
+
+#discord:hover {
+  background-color: #fff;
+  color: #7289DA;
 }
 
 .footer .btn.btn-link {
