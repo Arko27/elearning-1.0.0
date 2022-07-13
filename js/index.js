@@ -12,3 +12,29 @@ document.getElementById("newcontact").addEventListener("click",(e)=>{
     }
 
   })
+
+cname = document.getElementById("cname").value;
+cemail = document.getElementById("cemail").value;
+csubject = document.getElementById("csubject").value;
+cmessage = document.getElementById("cmessage").value;
+
+
+document.getElementById("cbutton").addEventListener('click',(e)=>{
+  e.preventDefault();
+  console.log(cname,cemail,csubject,cmessage)
+  // if(!cname){
+  //   alert("provide name")
+  // }
+  // else
+  // if(!cemail){
+  //   alert("provide email")
+  // }
+  // else
+  // if(!csubject){
+  //   alert("provide subject")
+  // }
+  // else
+  // if(!cmessage){
+  //   alert("provide message")
+  // }
+})
