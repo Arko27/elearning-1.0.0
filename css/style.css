@@ -181,6 +181,13 @@ body {
   /* margin:10px 5px; */
   /* transform: rotate(180deg); */
 }
+.display-3{
+  text-shadow:
+               -1px -1px 0 #ccc,
+                1px -1px 0 #ccc,
+               -1px 1px 0 #ccc,
+                1px 1px 0 #ccc;
+}
 .moto i{
   display: block;
   margin:0px 5px;
@@ -189,6 +196,11 @@ body {
 .moto h3 i{
   display: block;
   font-size: 0.5rem;
+}
+.mission {
+  font-size: 1.2rem;
+  font-family:raleway;
+  text-decoration: dotted;
 }
 /*** Spinner ***/
 #spinner {
