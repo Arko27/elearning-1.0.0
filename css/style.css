@@ -192,6 +192,7 @@ body {
   display: block;
   margin:0px 5px;
   transform: rotateY(180deg);
+font-size: 0.9rem;
 }
 .moto h3 i{
   display: block;
