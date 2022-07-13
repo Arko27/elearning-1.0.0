@@ -130,7 +130,7 @@ body {
 .floating {
   position: fixed;
   display: none;
-  right: 40px;
+  right: 37px;
   bottom: 100px;
   z-index: 99;
   width:70px;
