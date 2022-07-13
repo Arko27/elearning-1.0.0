@@ -120,7 +120,7 @@ h3,
 
     h3,
     .h3 {
-        font-size: 1.75rem
+        font-size: 1.5rem;
     }
 }
 
@@ -133,18 +133,21 @@ h4,
 
     h4,
     .h4 {
-        font-size: 1.5rem
+        font-size: 1.5rem;
     }
 }
 
 h5,
 .h5 {
-    font-size: 1.25rem
+    font-size: 18px;
 }
 
 h6,
 .h6 {
-    font-size: 1rem
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 500;
+    text-align: justify;
 }
 
 p {
@@ -3102,8 +3105,8 @@ fieldset:disabled .btn {
 
 .btn-primary:hover {
     color: #000;
-    background-color: #2bc5d4;
-    border-color: #1fc2d1;
+    background-color: #4f88ad;
+    border-color: #4f88ad;
 }
 
 .btn-check:focus+.btn-primary,
@@ -3372,8 +3375,8 @@ fieldset:disabled .btn {
 
 .btn-light:hover {
     color: #000;
-    background-color: #f2fcfc;
-    border-color: #f2fbfc
+    background-color: #cfe3f1;
+    border-color: #cfe3f1;
 }
 
 .btn-check:focus+.btn-light,
@@ -8041,8 +8044,8 @@ fieldset:disabled .btn {
 }
 
 .px-4 {
-    padding-right: 1.5rem !important;
-    padding-left: 1.5rem !important
+    /* padding-right: 1.5rem !important; */
+    padding-left: 1.5rem !important;
 }
 
 .px-5 {
