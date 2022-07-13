@@ -173,7 +173,8 @@ body {
   font:raleway,sans-serif;
   font-size: auto;
   font-style: italic;
-
+  display:flex;
+  align-items: center;
 }
 .moto i:nth-child(1){
   display: block;
@@ -184,6 +185,10 @@ body {
   display: block;
   margin:0px 5px;
   transform: rotateY(180deg);
+}
+.moto h3 i{
+  display: block;
+  font-size: 0.5rem;
 }
 /*** Spinner ***/
 #spinner {
