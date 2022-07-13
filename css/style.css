@@ -605,33 +605,39 @@ body {
 }
 
 #whatsapp:hover {
-  background-color: #fff;
-  color: #25D366;
+  color: #fff;
+  background-color: #25D366;
+  border-color: #25D366;
 }
 
 #facebook:hover {
-  background-color: #fff;
-  color: #4267b2;
+  color: #fff;
+  background-color: #4267b2;
+  border-color: #4267b2;
 }
 
 #youtube:hover {
-  background-color: #fff;
-  color: #ff0000;
+  color: #fff;
+  background-color: #ff0000;
+  border-color: #ff0000;
 }
 
 #linkedin:hover {
-  background-color: #fff;
-  color: #0072b1;
+  color: #fff;
+  background-color: #0072b1;
+  border-color: #0072b1;
 }
 
 #instagram:hover {
-  background-color: #fff;
-  color: #f56040;
+  color: #fff;
+  background-image: linear-gradient(to bottom left,  #833AB4, #E1306C,#F56040, #FFDC80);
+  border-color: #E1306C;
 }
 
 #discord:hover {
-  background-color: #fff;
-  color: #7289DA;
+  color: #fff;
+  background-color: #7289DA;
+  border-color: #7289DA;
 }
 
 .footer .btn.btn-link {
