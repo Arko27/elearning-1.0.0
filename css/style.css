@@ -157,8 +157,39 @@ body {
   right: 45px;
   bottom: 45px;
   z-index: 99;
+  font:raleway,sans-serif;
+  color:primary;
 }
-
+.moto{
+  text-align:center;
+  display: flex;
+  justify-content: center;
+  color:var(--primary);
+  text-transform:capitalize;
+  /* font-size: 1.5rem; */
+  /* margin:10px 0px; */
+}
+.moto h3{
+  font:raleway,sans-serif;
+  font-size: auto;
+  font-style: italic;
+  display:flex;
+  align-items: center;
+}
+.moto i:nth-child(1){
+  display: block;
+  /* margin:10px 5px; */
+  /* transform: rotate(180deg); */
+}
+.moto i{
+  display: block;
+  margin:0px 5px;
+  transform: rotateY(180deg);
+}
+.moto h3 i{
+  display: block;
+  font-size: 0.5rem;
+}
 /*** Spinner ***/
 #spinner {
   opacity: 0;
