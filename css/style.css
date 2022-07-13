@@ -171,7 +171,7 @@ body {
 }
 .moto h3{
   font:raleway,sans-serif;
-  font-size: auto;
+  font-size: 1rem;
   font-style: italic;
   display:flex;
   align-items: center;
