@@ -1,5 +1,5 @@
 toggle=0
-document.getElementById("floating").style.display = "none";
+document.getElementById("newcontact").style.display = "none";
 document.getElementById("newcontact").addEventListener("click",(e)=>{
     // e.preventDefault();
     toggle=!toggle
