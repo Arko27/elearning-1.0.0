@@ -10,6 +10,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Gulzar&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Finlandica:ital@1&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;1,400;1,500;1,700&display=swap");
 
 :root {
@@ -199,8 +200,10 @@ body {
 }
 .mission {
   font-size: 1.2rem;
-  font-family:raleway;
+  /* font-family:raleway; */
   text-decoration: dotted;
+  font-family: 'Finlandica', sans-serif;
+  text-align: justify;
 }
 /*** Spinner ***/
 #spinner {
@@ -268,9 +271,10 @@ body {
 
 #logo {
   max-width: 100%;
-  max-height: 3.5rem;
+  max-height: 4rem;
   height: auto;
   width: auto;
+  margin-left: -20px;
 }
 
 #footer-logo {
